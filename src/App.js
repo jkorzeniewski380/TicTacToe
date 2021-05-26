@@ -3,9 +3,6 @@ import Board from './components/Board/Board';
 import './App.css';
 
 function calculateWinner(squares, movesCount) {
-  if (movesCount === 9)
-    return "Draw";
-
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -22,6 +19,9 @@ function calculateWinner(squares, movesCount) {
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c])
       return squares[a];
   }
+
+  if (movesCount === 9)
+    return "Draw";
 
   return null;
 }
